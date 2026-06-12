@@ -1,0 +1,30 @@
+PROYECTO: SISTEMA DE CONTROL CON INTERFAZ KIVY
+================================================
+
+ARQUITECTURA EN CAPAS:
+
+1. CAPA HARDWARE (hardware_layer.py)
+   - Registros de control del sistema
+   - Simulación de periféricos físicos
+   - Variables de estado del hardware
+
+2. CAPA DRIVER (drivers/)
+   - driver_led.py: Control de LEDs (GPIO)
+   - driver_display.py: Control de displays
+   - driver_sensor.py: Lectura de sensores
+   - driver_serial.py: Comunicación serial
+
+3. CAPA DISPOSITIVOS/MÓDULOS (devices/)
+   - module_led_rgb.py: LED RGB (usa driver_led)
+   - module_display_7seg.py: Display 7 segmentos (usa driver_display)
+   - module_sensor_temp.py: Sensor temperatura (usa driver_sensor)
+   - module_communication.py: Comunicación (usa driver_serial)
+
+4. CAPA APLICACIÓN (app/)
+   - ui_main.py: Interfaz principal (Kivy)
+   - ui_popups.py: Popups reutilizables
+   - app_logic.py: Lógica de negocio
+   - config.py: Configuración
+
+5. ARCHIVO MAIN
+   - main.py: Punto de entrada
